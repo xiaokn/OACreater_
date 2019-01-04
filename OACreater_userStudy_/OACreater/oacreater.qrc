@@ -1,0 +1,62 @@
+<RCC>
+  <qresource prefix="OACreater">
+    <file>Resources/grid_96px.png</file>
+    <file>Resources/remove_spacing3副本.png</file>
+    <file>Resources/edit_spacing3.png</file>
+    <file>Resources/edit_spacing3.png</file>
+    <file>Resources/add_spacing_group.png</file>
+    <file>Resources/add_spacing2.png</file>
+    <file>Resources/remove_spacing3.png</file>
+    <file>Resources/remove_spacing3.png</file>
+    <file>Resources/delete_edit_spacing2.png</file>
+    <file>Resources/remove_spacing2.png</file>
+    <file>Resources/edit_spacing2.png</file>
+    <file>Resources/2副本2.png</file>
+    <file>Resources/2副本3.png</file>
+    <file>Resources/2副本.png</file>
+    <file>Resources/add spacing end.png</file>
+    <file>Resources/remove spacing.png</file>
+    <file>Resources/add spacing start.png</file>
+    <file>Resources/zoom.png</file>
+    <file>Resources/arcball.png</file>
+    <file>Resources/show id2.png</file>
+    <file>Resources/all_fix1.png</file>
+    <file>Resources/all_float1.png</file>
+    <file>Resources/all_fix2.png</file>
+    <file>Resources/update_relaion1.png</file>
+    <file>Resources/update_relaion1.png</file>
+    <file>Resources/edit_relaion.png</file>
+    <file>Resources/edit_relaion.png</file>
+    <file>Resources/part.png</file>
+    <file>Resources/edit_relaion.png</file>
+    <file>Resources/update_relaion.png</file>
+    <file>Resources/show_shape_Id.png</file>
+    <file>Resources/Show Rotation.png</file>
+    <file>Resources/add_float_1.png</file>
+    <file>Resources/add_fix_1.png</file>
+    <file>Resources/stopRotation.png</file>
+    <file>Resources/add_relaiongs.png</file>
+    <file>Resources/delete_relations.png</file>
+    <file>Resources/checkrelaions.png</file>
+    <file>Resources/confirm.png</file>
+    <file>Resources/copy.png</file>
+    <file>Resources/cursor.png</file>
+    <file>Resources/curve_alignment.png</file>
+    <file>Resources/delete.png</file>
+    <file>Resources/edit_snapping_line.png</file>
+    <file>Resources/Folder_Open.png</file>
+    <file>Resources/folders.png</file>
+    <file>Resources/hand.png</file>
+    <file>Resources/paste.png</file>
+    <file>Resources/pushpin.png</file>
+    <file>Resources/redo.png</file>
+    <file>Resources/Save.png</file>
+    <file>Resources/scale.png</file>
+    <file>Resources/select_model.png</file>
+    <file>Resources/select_model_o.png</file>
+    <file>Resources/SelectShape.png</file>
+    <file>Resources/toggle.png</file>
+    <file>Resources/undo.png</file>
+    <file>Resources/Folder_Open.png</file>
+  </qresource>
+</RCC>

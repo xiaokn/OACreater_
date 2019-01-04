@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OACreaterClass</class>
+ <widget class="QMainWindow" name="OACreaterClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1180</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OACreater</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="CDisplayWidget" name="displaywidget" native="true"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="Preview" name="preview" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1180</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_Shape"/>
+    <addaction name="actionSave_Shape"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionDelete"/>
+    <addaction name="actionSelect_Model"/>
+    <addaction name="actionAll_Fixing"/>
+    <addaction name="actionAll_Floating"/>
+    <addaction name="actionClear_Edit_Relaion"/>
+    <addaction name="actionStop_Rotation"/>
+    <addaction name="actionApply_Refinement"/>
+    <addaction name="actionZoom"/>
+    <addaction name="actionAdd_Spacing_End"/>
+   </widget>
+   <widget class="QMenu" name="menuRefine">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionShow_ID"/>
+    <addaction name="actionShow_Relaion"/>
+    <addaction name="actionOperate_Camera"/>
+    <addaction name="actionFour_Relaions"/>
+    <addaction name="actionRotate_With_Camera"/>
+    <addaction name="actionShow_Spacing"/>
+    <addaction name="actionShow_grid"/>
+   </widget>
+   <widget class="QMenu" name="menuOther">
+    <property name="title">
+     <string>Mouse Mode</string>
+    </property>
+    <addaction name="actionOperate_Shape"/>
+    <addaction name="actionAdd_relations"/>
+    <addaction name="actionCurve_Alignment"/>
+    <addaction name="actionSelect_Shape"/>
+    <addaction name="actionAdd_Spacing_Start"/>
+    <addaction name="actionRemove_Spacing"/>
+   </widget>
+   <widget class="QMenu" name="menuUser_Study">
+    <property name="title">
+     <string>User Study</string>
+    </property>
+    <addaction name="actionLoad_User_Study_Presets"/>
+    <addaction name="actionEnter_User_Name"/>
+    <addaction name="actionStart_User_Study"/>
+    <addaction name="actionProceed_User_Study"/>
+    <addaction name="actionEnd_User_Study"/>
+    <addaction name="actionBegin_User_Study_One"/>
+    <addaction name="actionFinish_User_Study"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuRefine"/>
+   <addaction name="menuOther"/>
+   <addaction name="menuUser_Study"/>
+  </widget>
+  <widget class="QToolBar" name="main">
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen_Shape"/>
+   <addaction name="actionSave_Shape"/>
+   <addaction name="actionApply_Refinement"/>
+   <addaction name="separator"/>
+   <addaction name="actionOperate_Shape"/>
+   <addaction name="actionOperate_Camera"/>
+   <addaction name="actionAdd_relations"/>
+   <addaction name="actionRemove_Spacing"/>
+   <addaction name="actionAdd_Spacing_Start"/>
+   <addaction name="actionAdd_Spacing_End"/>
+   <addaction name="separator"/>
+   <addaction name="actionShow_Relaion"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSelect_Model"/>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+   <addaction name="actionCopy"/>
+   <addaction name="actionPaste"/>
+   <addaction name="actionDelete"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionClear_Edit_Relaion"/>
+   <addaction name="actionStop_Rotation"/>
+   <addaction name="separator"/>
+   <addaction name="actionZoom"/>
+  </widget>
+  <action name="actionOpen_Shape">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/Folder_Open.png</normaloff>:/OACreater/Resources/Folder_Open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Shape</string>
+   </property>
+  </action>
+  <action name="actionSave_Shape">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/Save.png</normaloff>:/OACreater/Resources/Save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Shape</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/undo.png</normaloff>:/OACreater/Resources/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/redo.png</normaloff>:/OACreater/Resources/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/copy.png</normaloff>:/OACreater/Resources/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/paste.png</normaloff>:/OACreater/Resources/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/delete.png</normaloff>:/OACreater/Resources/delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionScale">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/scale.png</normaloff>:/OACreater/Resources/scale.png</iconset>
+   </property>
+   <property name="text">
+    <string>Scale</string>
+   </property>
+  </action>
+  <action name="actionAll_Fixing">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/all_fix2.png</normaloff>:/OACreater/Resources/all_fix2.png</iconset>
+   </property>
+   <property name="text">
+    <string>All Fix</string>
+   </property>
+  </action>
+  <action name="actionAll_Floating">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/all_float1.png</normaloff>:/OACreater/Resources/all_float1.png</iconset>
+   </property>
+   <property name="text">
+    <string>All Float</string>
+   </property>
+  </action>
+  <action name="actionSelect_Model">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/pushpin.png</normaloff>:/OACreater/Resources/pushpin.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fixed/Floated</string>
+   </property>
+  </action>
+  <action name="actionStop_Update">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/hand.png</normaloff>:/OACreater/Resources/hand.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stop Update</string>
+   </property>
+  </action>
+  <action name="actionApply_Refinement">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/confirm.png</normaloff>:/OACreater/Resources/confirm.png</iconset>
+   </property>
+   <property name="text">
+    <string>Apply Refinement</string>
+   </property>
+  </action>
+  <action name="actionAdd_relations">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/edit_spacing3.png</normaloff>:/OACreater/Resources/edit_spacing3.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit Relation</string>
+   </property>
+  </action>
+  <action name="actionSelect_Shape">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/part.png</normaloff>:/OACreater/Resources/part.png</iconset>
+   </property>
+   <property name="text">
+    <string>Local Refinement</string>
+   </property>
+  </action>
+  <action name="actionOperate_Shape">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/cursor.png</normaloff>:/OACreater/Resources/cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit Shape</string>
+   </property>
+  </action>
+  <action name="actionCurve_Alignment">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/curve_alignment.png</normaloff>:/OACreater/Resources/curve_alignment.png</iconset>
+   </property>
+   <property name="text">
+    <string>Curve Alignment</string>
+   </property>
+  </action>
+  <action name="actionDelete_Relations">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/delete_relations.png</normaloff>:/OACreater/Resources/delete_relations.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Relations</string>
+   </property>
+  </action>
+  <action name="actionDelete_Relations_2">
+   <property name="text">
+    <string>Delete Relations</string>
+   </property>
+  </action>
+  <action name="actionClear_Edit_Relaion">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/delete_edit_spacing2.png</normaloff>:/OACreater/Resources/delete_edit_spacing2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear Relaion Editings </string>
+   </property>
+  </action>
+  <action name="actionStop_Rotation">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/Show Rotation.png</normaloff>:/OACreater/Resources/Show Rotation.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rotation Switch</string>
+   </property>
+  </action>
+  <action name="actionShow_ID">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/show id2.png</normaloff>:/OACreater/Resources/show id2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Shape ID</string>
+   </property>
+  </action>
+  <action name="actionShow_Relaion">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/update_relaion1.png</normaloff>:/OACreater/Resources/update_relaion1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Relaion</string>
+   </property>
+  </action>
+  <action name="actionFour_Relaions">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Four Relaions</string>
+   </property>
+  </action>
+  <action name="actionRotate_With_Camera">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Rotate With Camera</string>
+   </property>
+  </action>
+  <action name="actionLoad_User_Study_Presets">
+   <property name="text">
+    <string>Load User Study Presets</string>
+   </property>
+  </action>
+  <action name="actionEnter_User_Name">
+   <property name="text">
+    <string>Enter User Name</string>
+   </property>
+  </action>
+  <action name="actionStart_User_Study">
+   <property name="text">
+    <string>Start User Study</string>
+   </property>
+  </action>
+  <action name="actionProceed_User_Study">
+   <property name="text">
+    <string>Proceed User Study</string>
+   </property>
+  </action>
+  <action name="actionEnd_User_Study">
+   <property name="text">
+    <string>End User Study</string>
+   </property>
+  </action>
+  <action name="actionBegin_User_Study_One">
+   <property name="text">
+    <string>Begin User Study One</string>
+   </property>
+  </action>
+  <action name="actionFinish_User_Study">
+   <property name="text">
+    <string>Finish User Study</string>
+   </property>
+  </action>
+  <action name="actionOperate_Camera">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/arcball.png</normaloff>:/OACreater/Resources/arcball.png</iconset>
+   </property>
+   <property name="text">
+    <string>Operate Camera</string>
+   </property>
+  </action>
+  <action name="actionZoom">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/zoom.png</normaloff>:/OACreater/Resources/zoom.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom</string>
+   </property>
+  </action>
+  <action name="actionShow_Spacing">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Spacing</string>
+   </property>
+  </action>
+  <action name="actionAdd_Spacing_Start">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/add_spacing2.png</normaloff>:/OACreater/Resources/add_spacing2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Spacing Start</string>
+   </property>
+  </action>
+  <action name="actionRemove_Spacing">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/remove_spacing3副本.png</normaloff>:/OACreater/Resources/remove_spacing3副本.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove Spacing</string>
+   </property>
+  </action>
+  <action name="actionAdd_Spacing_End">
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/add_spacing_group.png</normaloff>:/OACreater/Resources/add_spacing_group.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Spacing End</string>
+   </property>
+  </action>
+  <action name="actionShow_grid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="oacreater.qrc">
+     <normaloff>:/OACreater/Resources/grid_96px.png</normaloff>:/OACreater/Resources/grid_96px.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Grid</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CDisplayWidget</class>
+   <extends>QWidget</extends>
+   <header>displaywidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Preview</class>
+   <extends>QWidget</extends>
+   <header>preview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="oacreater.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionAll_Fixing</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>FixAllModels()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAll_Floating</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>FloatAllModels()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionApply_Refinement</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>ApplyRefinement()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCopy</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>Copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCurve_Alignment</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>CurveAlignment()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDelete</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>Delete()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAdd_relations</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>AddRelaions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen_Shape</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>OpenShape()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOperate_Shape</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>ChageMouseToOperateShape()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPaste</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>Paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionScale</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>ChangeScale()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSelect_Model</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>SelectModel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSelect_Shape</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>SelectShape()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStop_Update</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>StopRelationUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionUndo</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>Undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRedo</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>Redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave_Shape</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>SaveShape()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionClear_Edit_Relaion</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>ClearEditRelaions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStop_Rotation</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>StopRotation(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShow_ID</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>DrawShapeNo(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShow_Relaion</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>UpdateRelations(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFour_Relaions</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>ShowFourRelaions(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRotate_With_Camera</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>RotateWithCamera(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLoad_User_Study_Presets</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>LoadUserStudyPresets()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEnter_User_Name</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>EnterUserName()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStart_User_Study</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>StartUserStudy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionProceed_User_Study</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>ProceedUserStudy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEnd_User_Study</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>EndUserStudy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBegin_User_Study_One</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>BeginUserStudyOne()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFinish_User_Study</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>FinishUserStudy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOperate_Camera</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>OperateCamera()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZoom</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>Zoom(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAdd_Spacing_Start</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>AddSpacingStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAdd_Spacing_End</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>AddSpacingEnd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRemove_Spacing</sender>
+   <signal>triggered()</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>RemoveSpacing()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShow_Spacing</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>ShaowSpacing(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShow_grid</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OACreaterClass</receiver>
+   <slot>ShowGrid(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>OpenShape()</slot>
+  <slot>SaveShape()</slot>
+  <slot>Undo()</slot>
+  <slot>Redo()</slot>
+  <slot>Copy()</slot>
+  <slot>Paste()</slot>
+  <slot>Delete()</slot>
+  <slot>SelectModel()</slot>
+  <slot>FixAllModels()</slot>
+  <slot>FloatAllModels()</slot>
+  <slot>UpdateRelations(bool)</slot>
+  <slot>StopRelationUpdate()</slot>
+  <slot>ApplyRefinement()</slot>
+  <slot>SelectShape()</slot>
+  <slot>ChageMouseToOperateShape()</slot>
+  <slot>CurveAlignment()</slot>
+  <slot>ChangeScale()</slot>
+  <slot>AddRelaions()</slot>
+  <slot>DrawShapeNo(bool)</slot>
+  <slot>ClearEditRelaions()</slot>
+  <slot>StopRotation(bool)</slot>
+  <slot>ShowFourRelaions(bool)</slot>
+  <slot>RotateWithCamera(bool)</slot>
+  <slot>LoadUserStudyPresets()</slot>
+  <slot>EnterUserName()</slot>
+  <slot>StartUserStudy()</slot>
+  <slot>ProceedUserStudy()</slot>
+  <slot>EndUserStudy()</slot>
+  <slot>BeginUserStudyOne()</slot>
+  <slot>FinishUserStudy()</slot>
+  <slot>OperateCamera()</slot>
+  <slot>Zoom(bool)</slot>
+  <slot>AddSpacingStart()</slot>
+  <slot>AddSpacingEnd()</slot>
+  <slot>RemoveSpacing()</slot>
+  <slot>ShaowSpacing(bool)</slot>
+  <slot>ShowGrid(bool)</slot>
+ </slots>
+</ui>
